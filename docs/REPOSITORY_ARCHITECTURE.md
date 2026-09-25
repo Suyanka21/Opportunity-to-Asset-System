@@ -13,22 +13,25 @@ Opportunity-to-Asset-System/
 ├── GLOBAL_AGENT_INSTRUCTIONS.md   # Shared cross-cutting operational rules
 ├── CONSTITUTION.md                # Root mirror of the authoritative OAS Constitution
 │
+├── .agents/                       # Antigravity discovery adapter root
+│   └── skills.json                # Declarative adapter pointing to canonical skills/
+│
 ├── constitution/
 │   └── OAS-CONSTITUTION.md        # Authoritative OAS Constitution (Source of Truth)
 │
-├── skills/
+├── skills/                        # Canonical Source of Truth for OAS Skills
 │   ├── signal-scan/
 │   │   ├── SKILL.md               # Detection skill definition
 │   │   └── templates/
-│   │       └── signal_record.md   # Local fallback template for standalone export
+│   │       └── signal_record.md   # Local template
 │   ├── opportunity-scorer/
 │   │   ├── SKILL.md               # Scoring, shrinking & pricing skill definition
 │   │   └── templates/
-│   │       └── opportunity_card.md# Local fallback template for standalone export
+│   │       └── opportunity_card.md# Local template
 │   └── opportunity-ledger/
 │       ├── SKILL.md               # History, staleness & repetition tracking skill
 │       └── templates/
-│           └── ledger_entry.md    # Local fallback template for standalone export
+│           └── ledger_entry.md    # Local template
 │
 ├── templates/                     # Centralized canonical schemas
 │   ├── signal_record.md           # Schema for candidate signals
@@ -151,29 +154,37 @@ By centralizing these rules at the repo level, skills remain compact and token-e
 
 ---
 
-## G. Terminology Audit Results
+## G. Terminology Audit Results (Founder Decision Pending)
 
-- **Authoritative Term**: **Minimal Monetizable Unit (MMU)**.
-- **Source**: Constitution Line 12 explicitly declares: `Core unit: Minimal Monetizable Unit (MMU).`
-- **Audit Findings**: The terms "Minimum Meaningful Unit" and "Minimum Movable Unit" appeared only in `TODO.md` review prompts and not in the authoritative Constitution. All active skill definitions and instructions have been verified to standardize on `Minimal Monetizable Unit (MMU)`.
+- **Constitutional Authoritative Term**: **Minimal Monetizable Unit (MMU)**.
+  - *Source*: Constitution Line 12 explicitly declares: `Core unit: Minimal Monetizable Unit (MMU).`
+  - *Skill Definition*: `skills/opportunity-scorer/SKILL.md` uses: `isolates the Minimal Monetizable Unit...`
+- **Mandate Phrasing Divergence**:
+  - `docs/TODO.md` (the original 18-task integration mandate) references:
+    - **Minimum Meaningful Unit** (Line 253)
+    - **Minimum Movable Unit** (Line 254)
+- **Status — Founder Decision Pending**:
+  Per founder instructions, this difference is explicitly preserved and flagged rather than silently reconciled. The operational system defaults to **Minimal Monetizable Unit (MMU)** per the supreme authority of the Constitution, but the founder retains discretion on whether "Meaningful" or "Movable" represents an intentional distinct lens for non-monetized interventions.
 
 ---
 
 ## H. Unresolved Founder Decisions (Provisional Working Defaults)
 
-The following parameters are intentionally categorized as **provisional working defaults** requiring founder confirmation rather than immutable constitutional law:
+The following parameters are intentionally categorized as **provisional working defaults / founder decisions pending** requiring founder confirmation rather than immutable constitutional law:
 
-1. **Freshness Verification Windows**:
+1. **MMU Canonical Phrasing**:
+   - Whether **Minimal Monetizable Unit** remains exclusive, or if **Minimum Meaningful Unit** / **Minimum Movable Unit** are formalized for specific execution stages.
+2. **Freshness Verification Windows**:
    - Fast-moving / seasonal claims: **7 days**
    - General SMB pain points: **30 days**
    - Structural or regulatory facts: **90 days**
-2. **Research-Depth Pricing Tiers**:
+3. **Research-Depth Pricing Tiers**:
    - Under ~$50: Single pass, single source.
    - ~$50–$500: 2–3 corroborating sources before committing effort.
    - Over ~$500: Buyer conversation required before validation is considered complete.
-3. **Graduation Bar**:
+4. **Graduation Bar**:
    - **3 or more paid instances** of a specific (Problem × Buyer × Solution) triple before proposing productization.
-4. **Physical Ledger Format**:
+5. **Physical Ledger Format**:
    - Currently standardized as plain Markdown entries in `outputs/` or `opportunities/`. If transactional volume grows, founder may select a database or spreadsheet backend.
 
 ---

@@ -70,9 +70,13 @@ OAS strictly limits execution to three composable skills:
 ├── README.md                      # High-level repository overview and execution model
 ├── GLOBAL_AGENT_INSTRUCTIONS.md   # Shared cross-cutting operational rules
 ├── CONSTITUTION.md                # Root mirror of the authoritative Constitution
+│
+├── .agents/                       # Antigravity discovery adapter root
+│   └── skills.json                # Declarative adapter pointing to canonical skills/
+│
 ├── constitution/
-│   └── OAS-CONSTITUTION.md        # Authoritative OAS Constitution
-├── skills/
+│   └── OAS-CONSTITUTION.md        # Authoritative OAS Constitution (Source of Truth)
+├── skills/                        # Canonical Source of Truth for OAS Skills
 │   ├── signal-scan/               # Detection skill
 │   ├── opportunity-scorer/        # Validation, MMU shrinking & pricing skill
 │   └── opportunity-ledger/        # Audit, repetition & graduation tracking skill
