@@ -65,10 +65,11 @@ Before scanning, check whether the same scope/window was already covered
 recently (the ledger is the source of truth for this) — don't re-run
 research that's still fresh.
 
-## 6. MMU discipline
+## 6. MMU discipline (Minimal Monetizable Unit)
 
-Before naming any delivery form (app, doc, spreadsheet, WhatsApp broadcast,
-whatever), state the underlying value being delivered in one buyer-facing
-sentence with no technology named. Only then pick the smallest form capable
-of carrying that value to the buyer. SaaS/website/dashboard/app/automation
-are implementation choices, never the starting point.
+The core unit of OAS is the **Minimal Monetizable Unit (MMU)**. Before naming
+any delivery form (app, doc, spreadsheet, WhatsApp broadcast, whatever), state
+the underlying value being delivered in one buyer-facing sentence with no
+technology named. Only then pick the smallest form capable of carrying that
+value to the buyer within ~72 hours. SaaS/website/dashboard/app/automation are
+implementation choices, never the starting point.
